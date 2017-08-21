@@ -39,7 +39,10 @@ while (True):
     enemy_bonus = int(input("Enter the enemies' initiative bonus: "))
     qty = int(input("How many of these enemies to create: "))
     for i in range(qty):
-        curr_name = name + " " + str(i+1)
+        curr_name = name
+        # If there is more than one copy of the enemy, diferentiate them by giving a number
+        if (qty > 1):
+               curr_name += " " + str(i+1)
         curr_init = random.randint(1, 21) + enemy_bonus
         initiatives.append((curr_name, curr_init))
 
